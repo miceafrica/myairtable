@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Settings</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Account Settings</h1>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <% if (success) { %>
+      <p class="success"><%= success %></p>
+    <% } %>
+    <form method="POST" action="/settings">
+      <label>Name:</label>
+      <input type="text" name="name" value="<%= user.name %>" required />
+      <label>Email:</label>
+      <input type="email" name="email" value="<%= user.email %>" required />
+      <label>Password:</label>
+      <input type="password" name="password" value="<%= user.password %>" required />
+      <button type="submit">Update Settings</button>
+    </form>
+    <br/>
+    <a href="/dashboard">Back to Dashboard</a>
+  </div>
+</body>
+</html>

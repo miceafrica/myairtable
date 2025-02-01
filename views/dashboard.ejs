@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>User Dashboard</h1>
+        <p>You are logged in as: <strong><%= user.name %></strong> (<%= user.email %>)</p>
+      </div>
+      <div>
+        <a href="/logout" class="btn btn-logout">Logout</a>
+      </div>
+    </header>
+
+    <section>
+      <h2><%= user.name %>'s Listings</h2>
+      <% if (!listings || listings.length === 0) { %>
+        <p>No listings found.</p>
+      <% } else { %>
+        <table>
+          <thead>
+            <tr>
+              
+              <th>Name</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% listings.forEach(function(listing) { %>
+              <tr>
+                
+                <td>
+                  <!-- Link to view individual listing details -->
+                  <a href="/listings/view/<%= listing.id %>"><%= listing.name %></a>
+                </td>
+                <td><%= listing.status %></td>
+                <td>
+                  <a href="/listings/edit/<%= listing.id %>" class="btn btn-edit">Edit</a>
+                  <a href="/listings/delete/<%= listing.id %>" class="btn btn-delete">Delete</a>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } %>
+    </section>
+
+    <footer>
+      <a href="/listings/new" class="btn btn-primary">Create New Listing</a>
+      <a href="/settings" class="btn btn-secondary">Account Settings</a>
+    </footer>
+  </div>
+</body>
+</html>

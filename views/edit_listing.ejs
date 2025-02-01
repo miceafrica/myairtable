@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Listing</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Listing</h1>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form method="POST" action="/listings/edit/<%= id %>">
+      <label>Name:</label>
+      <input type="text" name="name" value="<%= listing.name %>" required />
+      <label>Status:</label>
+      <input type="text" name="status" value="<%= listing.status %>" required />
+      <label>Notes:</label>
+      <textarea name="notes" required><%= listing.notes %></textarea>
+      <button type="submit" class="btn btn-primary">Update Listing</button>
+    </form>
+    <br>
+    <a href="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+  </div>
+</body>
+</html>

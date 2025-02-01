@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <section>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    <p>You are logged in as: <strong><%= user.name %></strong> (User ID: <%= user.email %>)</p>
+    <a href="/logout">Logout</a>
+    
+    <h2>Airtable Configuration</h2>
+    <% if (message) { %>
+      <p class="success"><%= message %></p>
+    <% } %>
+    <form method="POST" action="/admin">
+      <label>Airtable API Key:</label>
+      <input type="text" name="apiKey" value="<%= config.apiKey %>" required />
+      <label>Airtable Base ID:</label>
+      <input type="text" name="baseId" value="<%= config.baseId %>" required />
+      <label>Table Name:</label>
+      <input type="text" name="tableName" value="<%= config.tableName %>" required />
+      <button type="submit">Update Configuration</button>
+    </form>
+  </div>
+</section>
+
+  <footer>
+    <a href="/listings/new" class="btn btn-primary">Create New Listing</a>
+    <a href="/settings" class="btn btn-secondary">Account Settings</a>
+  </footer>
+</body>
+</html>
