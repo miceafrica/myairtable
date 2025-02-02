@@ -308,13 +308,14 @@ app.post('/listings/new', (req, res) => {
     return res.redirect('/login');
   }
   // Extract fields from the form (adjust field names as needed)
-  const { name, status, notes } = req.body;
+  const { name, status, notes,image } = req.body;
   const base = getAirtableBase();
   // Create a new record in the Listings table and associate it with the logged-in user
   base(airtableConfig.tableName).create({
     name: name,
     status: status,
     notes: notes,
+    image: image,
     userId: [ req.session.user.id ]
   }, (err, record) => {
     if (err) {
