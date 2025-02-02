@@ -15,13 +15,15 @@
       <label>Name:</label>
       <input type="text" name="name" required />
       <label>Status:</label>
-        <select name="status" required>
+        <select name="status" class="styled-select" required>
           <option value="New">New</option>
           <option value="In progress">In progress</option>
           <option value="Done">Done</option>
         </select>
       <label>Notes:</label>
       <textarea name="notes" required></textarea>
+      <label>Image URL:</label>
+      <input type="url" name="image" placeholder="https://example.com/image.jpg" />
       <button type="submit">Create Listing</button>
     </form>
     <br/>
