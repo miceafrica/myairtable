@@ -5,8 +5,8 @@ const path = require('path');
 
 // Airtable configuration (for Listings and Users – both in the same base)
 let airtableConfig = {
-  apiKey: process.env.AIRTABLE_API_KEY || 'patKyBNKzoDe2egyq.e68ef2e41b8c2bbbfa1428230745da7b9346adef87eb11884d3ac671209b2c39',  // Replace with your API key or set it as an environment variable
-  baseId: process.env.AIRTABLE_BASE_ID || 'appKS0YCRTp5DGRPu',    // Replace with your Base ID or set it as an environment variable
+  apiKey: process.env.AIRTABLE_API_KEY || 'YOUR_KEY',  // Replace with your API key or set it as an environment variable
+  baseId: process.env.AIRTABLE_BASE_ID || 'BASE_ID',    // Replace with your Base ID or set it as an environment variable
   tableName: 'Listings'
 };
 
