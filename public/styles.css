@@ -138,4 +138,26 @@ body {
     object-fit: cover;
     margin: 20px 0 20px 0;
   }
-  
+
+
+/* Style for the select input */
+.styled-select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  /* Remove default appearance for consistent styling */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Optional: Add a custom arrow (requires extra styling) */
+.styled-select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%22292%22%20height%3D%22292%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20292%20292%22%3E%3Cpath%20d%3D%22M287%2069a19%2019%200%200%200-13-5H18a19%2019%200%200%200-13%205%2019%2019%200%200%200%200%2039l130%20131a19%2019%200%200%200%2027%200l130-131a19%2019%200%200%200%200-39z%22%20fill%3D%22%23666%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
