@@ -15,7 +15,11 @@
       <label>Name:</label>
       <input type="text" name="name" required />
       <label>Status:</label>
-      <input type="text" name="status" required />
+        <select name="status" required>
+          <option value="New">New</option>
+          <option value="In progress">In progress</option>
+          <option value="Done">Done</option>
+        </select>
       <label>Notes:</label>
       <textarea name="notes" required></textarea>
       <button type="submit">Create Listing</button>
